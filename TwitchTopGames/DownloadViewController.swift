@@ -21,15 +21,34 @@ class DownloadViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func DownloadData() {
+        
+        let urlString = "https://api.twitch.tv/kraken/games/top"
+        
+        if let url = URL(string: urlString) {
+            var request = URLRequest(url: url)
+            
+            
+            // Set headers
+            request.setValue("Accept", forHTTPHeaderField: "application/vnd.twitchtv.v5+json")
+            request.setValue("Client-ID", forHTTPHeaderField: "mafc61ius3g0bjpexh14yjyt4o1t5b")
+            let completionHandler = {(data: Data?, response: URLResponse?, error: Error?) -> Void in
+                
+                guard let d = data else {
+                    return
+                }
+                
+                let json = try? JSONSerialization.jsonObject(with: d, options: [])
+                
+                print(json)
+                // Do something
+            }
+            URLSession.shared.dataTask(with: request, completionHandler: completionHandler).resume()
+        } else {
+            // Something went wrong
+        }
     }
-    */
+
+
 
 }
