@@ -38,8 +38,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcj-rg-UKc">
-                                                    <rect key="frame" x="8" y="227" width="151" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <rect key="frame" x="8" y="217" width="151" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -53,7 +53,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="xcj-rg-UKc" secondAttribute="trailing" id="C4b-Xg-bxj"/>
                                             <constraint firstItem="xcj-rg-UKc" firstAttribute="leading" secondItem="neK-tO-dcn" secondAttribute="leadingMargin" id="Q6Q-XG-o9Y"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="xcj-rg-UKc" secondAttribute="bottom" id="R2J-Sg-QUX"/>
-                                            <constraint firstItem="xcj-rg-UKc" firstAttribute="top" secondItem="yIJ-02-CZC" secondAttribute="bottom" constant="10" id="SNm-9U-0qi"/>
+                                            <constraint firstItem="xcj-rg-UKc" firstAttribute="top" secondItem="yIJ-02-CZC" secondAttribute="bottom" id="SNm-9U-0qi"/>
                                             <constraint firstItem="yIJ-02-CZC" firstAttribute="width" secondItem="neK-tO-dcn" secondAttribute="width" multiplier="0.9" id="i3U-XB-gGh"/>
                                             <constraint firstItem="yIJ-02-CZC" firstAttribute="centerY" secondItem="neK-tO-dcn" secondAttribute="centerY" constant="-10" id="jCc-ug-wIg"/>
                                             <constraint firstItem="yIJ-02-CZC" firstAttribute="height" secondItem="neK-tO-dcn" secondAttribute="height" multiplier="0.8" id="kBj-6u-WBa"/>
