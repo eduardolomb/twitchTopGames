@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,50 +17,49 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TwitchTopGames" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fF2-fB-6vG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fF2-fB-6vG">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MIs-XO-ptt">
-                                    <size key="itemSize" width="134" height="184"/>
+                                    <size key="itemSize" width="167" height="272"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="gameCell" id="neK-tO-dcn">
-                                        <rect key="frame" x="0.0" y="0.0" width="134" height="184"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="252"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="134" height="184"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="167" height="252"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yIJ-02-CZC">
-                                                    <rect key="frame" x="20" y="27.5" width="94" height="129"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="129" id="I2x-dD-NlH"/>
-                                                        <constraint firstAttribute="width" constant="94" id="OVM-Z9-fOX"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcj-rg-UKc">
-                                                    <rect key="frame" x="8" y="166.5" width="118" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="227" width="151" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fortnite-136x190.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="yIJ-02-CZC">
+                                                    <rect key="frame" x="9" y="15.5" width="150.5" height="201.5"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.33174929466742137" green="0.41866420709515817" blue="0.88078997461928932" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="xcj-rg-UKc" secondAttribute="trailing" id="C4b-Xg-bxj"/>
                                             <constraint firstItem="xcj-rg-UKc" firstAttribute="leading" secondItem="neK-tO-dcn" secondAttribute="leadingMargin" id="Q6Q-XG-o9Y"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="xcj-rg-UKc" secondAttribute="bottom" id="R2J-Sg-QUX"/>
                                             <constraint firstItem="xcj-rg-UKc" firstAttribute="top" secondItem="yIJ-02-CZC" secondAttribute="bottom" constant="10" id="SNm-9U-0qi"/>
-                                            <constraint firstItem="yIJ-02-CZC" firstAttribute="centerY" secondItem="neK-tO-dcn" secondAttribute="centerY" id="jCc-ug-wIg"/>
+                                            <constraint firstItem="yIJ-02-CZC" firstAttribute="width" secondItem="neK-tO-dcn" secondAttribute="width" multiplier="0.9" id="i3U-XB-gGh"/>
+                                            <constraint firstItem="yIJ-02-CZC" firstAttribute="centerY" secondItem="neK-tO-dcn" secondAttribute="centerY" constant="-10" id="jCc-ug-wIg"/>
+                                            <constraint firstItem="yIJ-02-CZC" firstAttribute="height" secondItem="neK-tO-dcn" secondAttribute="height" multiplier="0.8" id="kBj-6u-WBa"/>
                                             <constraint firstItem="yIJ-02-CZC" firstAttribute="centerX" secondItem="neK-tO-dcn" secondAttribute="centerX" id="rYd-NR-oXe"/>
                                         </constraints>
-                                        <size key="customSize" width="134" height="184"/>
+                                        <size key="customSize" width="167" height="252"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -69,12 +69,24 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fF2-fB-6vG" secondAttribute="trailing" id="7br-V7-EkF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fF2-fB-6vG" secondAttribute="bottom" id="CeA-Kn-1IE"/>
+                            <constraint firstItem="fF2-fB-6vG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FqJ-LE-sd6"/>
+                            <constraint firstItem="fF2-fB-6vG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Tkf-Py-MvU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="uiCollectionView" destination="fF2-fB-6vG" id="i5M-uI-Tzx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="133.5832083958021"/>
+            <point key="canvasLocation" x="139.453125" y="132.65007320644216"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Fortnite-136x190.jpg" width="136" height="190"/>
+    </resources>
 </document>
