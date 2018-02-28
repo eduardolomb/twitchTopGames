@@ -12,44 +12,35 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     @IBOutlet weak var uiCollectionView: UICollectionView?
     
+    let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     let numberOfCellsPerRow: CGFloat = 2
+    var games: [Game] = []
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 50
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath)
-        return cell
+          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath) as? GameCollectionViewCell
+        
+        guard let c = cell else {
+            return UICollectionViewCell()
+        }
+        
+        c.uiName?.text = games[indexPath.row].name
+    
+        return c
         
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        var height = self.view.frame.size.height
-//        let width = self.view.frame.size.width
-//        if (height * 0.45 < 252) {
-//            height = 252
-//        } else {
-//            height *= 0.45
-//        }
-//
-//        return CGSize(width: width/2, height:height )
-//
-//    }
+    func getData() {
+        do {
+            games = (try context?.fetch(Game.fetchRequest()))!
+        } catch {
+            print("Fetching Failed")
+        }
+    }
     
-
-//    (CGSize)collectionView:(UICollectionView *)collectionView
-//    layout:(UICollectionViewLayout *)collectionViewLayout
-//    sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//
-//    CGFloat height = self.view.frame.size.height;
-//    CGFloat width  = self.view.frame.size.width;
-//    // in case you you want the cell to be 40% of your controllers view
-//    return CGSizeMake(width*0.4,height*0.4)
-//    }
-//
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,11 +53,15 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         }
         let x = DownloadData(downloadUrl:"https://api.twitch.tv/kraken/games/top")
         x.Download()
+        
+        
 
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        getData()
+    }
     
     
     override func didReceiveMemoryWarning() {

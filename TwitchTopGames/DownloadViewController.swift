@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import CoreData
 
 class DownloadData {
     
@@ -29,10 +30,7 @@ class DownloadData {
             // Set headers
             request.setValue("application/vnd.twitchtv.v5+json", forHTTPHeaderField: "Accept")
             request.setValue("mafc61ius3g0bjpexh14yjyt4o1t5b", forHTTPHeaderField: "Client-ID")
-
             
-            
-
             let completionHandler = {(data: Data?, response: URLResponse?, error: Error?) -> Void in
                 
                 guard let d = data else {
@@ -44,8 +42,23 @@ class DownloadData {
                 for i in 0...5 {
                     let name =  json["top"][i]["game"]["localized_name"].string
                     let thumb = json["top"][i]["game"]["box"]["medium"].string
-                    let game = Game(name: name, thumb: thumb)
-                    self.games.add(game)
+                    let gameObj = GameObj(name: name, thumb: thumb)
+                    self.games.add(gameObj)
+                    DispatchQueue.main.async {
+                    guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
+                        return
+                    }
+                    
+                    let game = Game(context: context) // Link Task & Context
+                        game.name = name
+                        game.thumb = thumb
+                        print("saved data!")
+                        // Save the data to coredata
+                        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+
+                    }
+                    
+            
                 }
                 // Do something
             }
