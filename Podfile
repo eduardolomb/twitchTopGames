@@ -7,4 +7,5 @@ target 'TwitchTopGames' do
 
   # Pods for TwitchTopGames
   	pod 'SwiftyJSON'
+  	pod 'SDWebImage'
 end

@@ -39,7 +39,7 @@ class DownloadData {
                 
                 let json = JSON(data:d)
                // print(json)
-                for i in 0...5 {
+                for i in 0...json["top"].count {
                     let name =  json["top"][i]["game"]["localized_name"].string
                     let thumb = json["top"][i]["game"]["box"]["medium"].string
                     let gameObj = GameObj(name: name, thumb: thumb)
@@ -52,6 +52,7 @@ class DownloadData {
                     let game = Game(context: context) // Link Task & Context
                         game.name = name
                         game.thumb = thumb
+                        print(name)
                         print("saved data!")
                         // Save the data to coredata
                         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout  {
     
@@ -17,7 +18,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     var games: [Game] = []
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 50
+        return 50000000
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -28,6 +29,11 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         }
         
         c.uiName?.text = games[indexPath.row].name
+        guard let thumbUrl = games[indexPath.row].thumb else {
+            return UICollectionViewCell()
+        }
+        let url = URL(string: thumbUrl)
+        c.uiThumb?.sd_setImage(with:url, completed: nil)
     
         return c
         
