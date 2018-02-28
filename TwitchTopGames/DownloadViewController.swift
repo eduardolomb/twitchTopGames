@@ -7,40 +7,46 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class DownloadViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+class DownloadData {
+    
+    var downloadUrl:String
+    var games:NSMutableArray
+    
+    init(downloadUrl:String) {
+        self.downloadUrl = downloadUrl
+        self.games = []
     }
     
-    func DownloadData() {
+    func Download() {
         
-        let urlString = "https://api.twitch.tv/kraken/games/top"
+        let urlString = downloadUrl
         
         if let url = URL(string: urlString) {
             var request = URLRequest(url: url)
             
-            
             // Set headers
-            request.setValue("Accept", forHTTPHeaderField: "application/vnd.twitchtv.v5+json")
-            request.setValue("Client-ID", forHTTPHeaderField: "mafc61ius3g0bjpexh14yjyt4o1t5b")
+            request.setValue("application/vnd.twitchtv.v5+json", forHTTPHeaderField: "Accept")
+            request.setValue("mafc61ius3g0bjpexh14yjyt4o1t5b", forHTTPHeaderField: "Client-ID")
+
+            
+            
+
             let completionHandler = {(data: Data?, response: URLResponse?, error: Error?) -> Void in
                 
                 guard let d = data else {
                     return
                 }
                 
-                let json = try? JSONSerialization.jsonObject(with: d, options: [])
-                
-                print(json)
+                let json = JSON(data:d)
+               // print(json)
+                for i in 0...5 {
+                    let name =  json["top"][i]["game"]["localized_name"].string
+                    let thumb = json["top"][i]["game"]["box"]["medium"].string
+                    let game = Game(name: name, thumb: thumb)
+                    self.games.add(game)
+                }
                 // Do something
             }
             URLSession.shared.dataTask(with: request, completionHandler: completionHandler).resume()

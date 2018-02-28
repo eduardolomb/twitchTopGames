@@ -60,7 +60,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             let cellWidth = (view.frame.width - max(0, numberOfCellsPerRow - 1)*horizontalSpacing)/numberOfCellsPerRow
             flowLayout.itemSize = CGSize(width: cellWidth, height:height*0.5)
         }
-        
+        let x = DownloadData(downloadUrl:"https://api.twitch.tv/kraken/games/top")
+        x.Download()
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
