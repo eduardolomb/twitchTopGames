@@ -78,18 +78,42 @@
 		66458E4A2045FFF200382FE6 /* TwitchTopGames */ = {
 			isa = PBXGroup;
 			children = (
+				668976B8204785D30082B2BE /* Resources */,
+				668976B7204785BD0082B2BE /* Support */,
+				668976B6204785980082B2BE /* Layout */,
 				66458E4B2045FFF200382FE6 /* AppDelegate.swift */,
 				66458E4D2045FFF200382FE6 /* ViewController.swift */,
-				66458E4F2045FFF200382FE6 /* Main.storyboard */,
-				66458E522045FFF200382FE6 /* Assets.xcassets */,
-				66458E542045FFF200382FE6 /* LaunchScreen.storyboard */,
-				66458E572045FFF200382FE6 /* Info.plist */,
 				66330C75204608D800826F09 /* DownloadViewController.swift */,
-				66330C7720460CAD00826F09 /* Fortnite-136x190.jpg */,
-				668976B02047310B0082B2BE /* gamesModel.xcdatamodeld */,
 				668976B4204738110082B2BE /* GameCollectionViewCell.swift */,
 			);
 			path = TwitchTopGames;
+			sourceTree = "<group>";
+		};
+		668976B6204785980082B2BE /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				66458E542045FFF200382FE6 /* LaunchScreen.storyboard */,
+				66458E4F2045FFF200382FE6 /* Main.storyboard */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		668976B7204785BD0082B2BE /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				66458E572045FFF200382FE6 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		668976B8204785D30082B2BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				668976B02047310B0082B2BE /* gamesModel.xcdatamodeld */,
+				66330C7720460CAD00826F09 /* Fortnite-136x190.jpg */,
+				66458E522045FFF200382FE6 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		AF5F700274E874719880981C /* Frameworks */ = {
