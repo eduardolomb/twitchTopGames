@@ -20,6 +20,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk9-RX-frG">
+                                <rect key="frame" x="0.0" y="50" width="1024" height="1316"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fF2-fB-6vG">
                                 <rect key="frame" x="0.0" y="50" width="1024" height="1316"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,14 +104,19 @@
                             <constraint firstItem="WaC-js-IkI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1AP-53-S11"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fF2-fB-6vG" secondAttribute="trailing" id="7br-V7-EkF"/>
                             <constraint firstItem="fF2-fB-6vG" firstAttribute="top" secondItem="WaC-js-IkI" secondAttribute="bottom" id="8IF-Zj-LrG"/>
+                            <constraint firstItem="mk9-RX-frG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BXv-zh-1RU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fF2-fB-6vG" secondAttribute="bottom" id="CeA-Kn-1IE"/>
                             <constraint firstItem="fF2-fB-6vG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FqJ-LE-sd6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mk9-RX-frG" secondAttribute="trailing" id="Twz-sA-a3W"/>
                             <constraint firstItem="WaC-js-IkI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bnd-83-UwU"/>
+                            <constraint firstItem="mk9-RX-frG" firstAttribute="top" secondItem="WaC-js-IkI" secondAttribute="bottom" id="cWu-E2-WE3"/>
                             <constraint firstItem="WaC-js-IkI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ihE-k2-3bH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mk9-RX-frG" secondAttribute="bottom" id="vkq-nz-DZZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="statusLabel" destination="mk9-RX-frG" id="hw0-QR-Jfy"/>
                         <outlet property="statusView" destination="WaC-js-IkI" id="210-ei-JCV"/>
                         <outlet property="uiCollectionView" destination="fF2-fB-6vG" id="i5M-uI-Tzx"/>
                         <outlet property="uiTitle" destination="3AK-pf-nPo" id="r7l-nV-yMt"/>
